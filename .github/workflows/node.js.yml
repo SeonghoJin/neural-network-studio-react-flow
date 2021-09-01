@@ -4,7 +4,9 @@
 name: Node.js CI
 
 on:
-  push: [main]
+  push:
+    branches:
+      - [main, test, feat]
   release:
     types:
       - created
