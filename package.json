@@ -1,5 +1,5 @@
 {
-  "name": "react-flow-nns",
+  "name": "@moretall/react-flow-nns",
   "version": "0.0.4",
   "main": "dist/ReactFlow.js",
   "module": "dist/ReactFlow.esm.js",
