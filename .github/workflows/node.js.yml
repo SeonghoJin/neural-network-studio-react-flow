@@ -4,25 +4,26 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ main, master, feat, test ]
-  pull_request:
-    branches: [ main, master, feat, test ]
+  release:
+    types: [created]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      name: Use Node.js ${{ matrix.node-version }}
+
+    - uses: actions/setup-node@v2
+      name: 'npm install && npm publish'
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: echo "3"
+    - run: npm install
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
