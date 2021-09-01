@@ -4,6 +4,7 @@
 name: Node.js CI
 
 on:
+  push: [main]
   release:
     types:
       - created
@@ -20,11 +21,11 @@ jobs:
       name: Use Node.js ${{ matrix.node-version }}
 
     - uses: actions/setup-node@v2
-      name: 'npm install && npm publish'
+      name: 'npm install && npm build && npm publish'
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
     - run: npm publish
+    - run: echo ${{secrets.NPM_TOKEN}}
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
