@@ -14,66 +14,13 @@ React Flow was initially created for [datablocks](https://datablocks.pro). A nod
 ## Installation
 
 ```
-npm install react-flow-renderer
+npm install react-flow-nns
 ```
 
-## Quick Start
+# Neural Network Studio Graph Renderer
 
-This is a very basic example of how to use React Flow. You can find more advanced examples on the [website](https://reactflow.dev/examples).
+## 목표 기능
 
-```js
-import React from 'react';
-import ReactFlow from 'react-flow-renderer';
-
-const elements = [
-  { id: '1', data: { label: 'Node 1' }, position: { x: 250, y: 5 } },
-  // you can also pass a React component as a label
-  { id: '2', data: { label: <div>Node 2</div> }, position: { x: 100, y: 100 } },
-  { id: 'e1-2', source: '1', target: '2', animated: true },
-];
-
-const BasicFlow = () => <ReactFlow elements={elements} />;
-```
-
-## Development
-
-Before you start you need to install the React Flow dependencies via `npm install` and the ones of the examples `cd example && npm install`.
-
-If you want to contribute or develop custom features the easiest way is to start the dev server:
-
-```sh
-npm start
-```
-
-and the example app via:
-
-```sh
-cd example && npm start 
-```
-
-The example app serves the content of the `example` folder and watches changes inside the `src` folder. The examples are using the source of the `src` folder.
-
-## Testing
-
-Testing is done with cypress. You can find the tests in the [`integration/flow`](/cypress/integration/flow) folder. In order to run the tests do:
-
-```sh
-npm run test
-```
-
-## Maintainer
-
-Moritz Klack • [Twitter](https://twitter.com/moklick) • [Github](https://github.com/moklick)
-
-## Support
-
-If you need custom support or features for your application we are [happy to hear from you](https://webkid.io/contact).
-
-
-### Thanks!
-
-Special thanks to [Andy Lindemann](https://github.com/AndyLnd) for a lot of helpful contributions!
-
----
-
-React Flow is maintained by [webkid](https://webkid.io), a data visualization agency from Berlin. If you need help or want to develop react-based tools or data visualizations, [get in touch](https://webkid.io/contact)!
+[ ] React Flow Edge 연결 범위 확대
+[ ] React Flow Edge Update 범위 확대 
+[ ] NNS-Front의 Core에 있는 기능을 연기로 옮길 수 있는 지 검토
