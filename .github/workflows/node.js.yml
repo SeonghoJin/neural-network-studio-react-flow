@@ -27,7 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm publish
     - run: echo ${{secrets.NPM_TOKEN}}
+    - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
