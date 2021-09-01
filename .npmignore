@@ -3,8 +3,3 @@
 .vscode
 .dependabot
 node_modules
-examples
-cypress
-.env
-tsconfig.json
-src
