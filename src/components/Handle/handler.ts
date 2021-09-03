@@ -27,20 +27,16 @@ type Result = {
   isHoveringHandle: boolean;
 };
 
-// checks if element below mouse is a handle and returns connection in form of an object { source: 123, target: 312 }
-function checkElementBelowIsValid(
-  event: MouseEvent,
-  connectionMode: ConnectionMode,
-  isTarget: boolean,
-  nodeId: ElementId,
-  handleId: ElementId | null,
-  isValidConnection: ValidConnectionFunc,
-  doc: Document | ShadowRoot
-) {
-  const elementBelow = doc.elementFromPoint(event.clientX, event.clientY);
-  const elementBelowIsTarget = elementBelow?.classList.contains('target') || false;
-  const elementBelowIsSource = elementBelow?.classList.contains('source') || false;
-
+function getCheckElementBelowIsValidResult(
+  elementBelow : Element | null,
+  elementBelowIsTarget : boolean,
+  elementBelowIsSource : boolean,
+  isTarget : boolean,
+  connectionMode : ConnectionMode,
+  nodeId : ElementId,
+  handleId : ElementId | null,
+  isValidConnection : ValidConnectionFunc,
+){
   const result: Result = {
     elementBelow,
     isValid: false,
@@ -62,17 +58,17 @@ function checkElementBelowIsValid(
       const elementBelowHandleId = elementBelow.getAttribute('data-handleid');
       const connection: Connection = isTarget
         ? {
-            source: elementBelowNodeId,
-            sourceHandle: elementBelowHandleId,
-            target: nodeId,
-            targetHandle: handleId,
-          }
+          source: elementBelowNodeId,
+          sourceHandle: elementBelowHandleId,
+          target: nodeId,
+          targetHandle: handleId,
+        }
         : {
-            source: nodeId,
-            sourceHandle: handleId,
-            target: elementBelowNodeId,
-            targetHandle: elementBelowHandleId,
-          };
+          source: nodeId,
+          sourceHandle: handleId,
+          target: elementBelowNodeId,
+          targetHandle: elementBelowHandleId,
+        };
 
       result.connection = connection;
       result.isValid = isValidConnection(connection);
@@ -80,6 +76,61 @@ function checkElementBelowIsValid(
   }
 
   return result;
+}
+
+// checks if element below mouse is a handle and returns connection in form of an object { source: 123, target: 312 }
+function checkElementBelowIsValid(
+  event: MouseEvent,
+  connectionMode: ConnectionMode,
+  isTarget: boolean,
+  nodeId: ElementId,
+  handleId: ElementId | null,
+  isValidConnection: ValidConnectionFunc,
+  doc: Document | ShadowRoot
+) {
+  const elementBelow = doc.elementFromPoint(event.clientX, event.clientY);
+  const elementBelowIsTarget = elementBelow?.classList.contains('target') || false;
+  const elementBelowIsSource = elementBelow?.classList.contains('source') || false;
+  const elementIsNode = elementBelow?.classList.contains('react-flow__node') || false;
+
+  if(elementIsNode){
+    const reactFlowNode = (event.target as Element).closest('.react-flow');
+    if(!reactFlowNode) throw new DOMException("ReactFlowNode가 존재하지 않습니다.");
+    if(!elementBelow) throw new DOMException("elementBelow가 존재하지 않습니다.");
+
+    const childrenLength = elementBelow.children.length;
+    for(let i = 0; i < childrenLength; i++){
+      const item = elementBelow.children.item(i);
+      if(!item)throw new DOMException("존재하지 않는 Handle입니다.");
+
+      const childrenIsTarget = item.classList.contains('target');
+      const childrenIsSource = item.classList.contains('source');
+
+      if(isTarget != childrenIsTarget){
+        return getCheckElementBelowIsValidResult(
+          item,
+          childrenIsTarget,
+          childrenIsSource,
+          isTarget,
+          connectionMode,
+          nodeId,
+          handleId,
+          isValidConnection
+        )
+      }
+    }
+  }
+
+  return getCheckElementBelowIsValidResult(
+    elementBelow,
+    elementBelowIsTarget,
+    elementBelowIsSource,
+    isTarget,
+    connectionMode,
+    nodeId,
+    handleId,
+    isValidConnection
+  );
 }
 
 function resetRecentHandle(hoveredHandle: Element): void {
@@ -170,7 +221,7 @@ export function onMouseDown(
       isValidConnection,
       doc
     );
-
+    console.log(connection, isValid);
     onConnectStop?.(event);
 
     if (isValid) {
