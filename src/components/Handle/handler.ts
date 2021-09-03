@@ -91,7 +91,7 @@ function checkElementBelowIsValid(
   const elementBelow = doc.elementFromPoint(event.clientX, event.clientY);
   const elementBelowIsTarget = elementBelow?.classList.contains('target') || false;
   const elementBelowIsSource = elementBelow?.classList.contains('source') || false;
-  const elementIsNode = elementBelow?.classList.contains('react-flow__node') || false;
+  const elementIsNode = !!elementBelow?.closest('.react-flow__node');
 
   if(elementIsNode){
     const reactFlowNode = (event.target as Element).closest('.react-flow');
@@ -223,7 +223,7 @@ export function onMouseDown(
       isValidConnection,
       doc
     );
-    console.log(connection, isValid);
+
     onConnectStop?.(event);
 
     if (isValid) {
