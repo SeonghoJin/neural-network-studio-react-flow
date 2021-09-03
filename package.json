@@ -1,6 +1,6 @@
 {
   "name": "react-flow-nns",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "dist/ReactFlow.js",
   "module": "dist/ReactFlow.esm.js",
   "types": "dist/index.d.ts",

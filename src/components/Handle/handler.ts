@@ -98,9 +98,11 @@ function checkElementBelowIsValid(
     if(!reactFlowNode) throw new DOMException("ReactFlowNode가 존재하지 않습니다.");
     if(!elementBelow) throw new DOMException("elementBelow가 존재하지 않습니다.");
 
-    const childrenLength = elementBelow.children.length;
+    const children = elementBelow.querySelectorAll(`${isTarget ? '.source' : '.target'}`);
+    const childrenLength = children.length;
+
     for(let i = 0; i < childrenLength; i++){
-      const item = elementBelow.children.item(i);
+      const item = children.item(i);
       if(!item)throw new DOMException("존재하지 않는 Handle입니다.");
 
       const childrenIsTarget = item.classList.contains('target');
