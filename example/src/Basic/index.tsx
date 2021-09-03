@@ -12,7 +12,7 @@ import ReactFlow, {
   Edge,
   Connection,
   OnLoadParams,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 const onNodeDragStop = (_: MouseEvent, node: Node) => console.log('drag stop', node);
 const onElementClick = (_: MouseEvent, element: FlowElement) => console.log('click', element);

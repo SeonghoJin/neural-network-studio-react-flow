@@ -7,7 +7,7 @@ import ReactFlow, {
   Elements,
   Connection,
   Edge,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 import ConnectionLine from './ConnectionLine';
 

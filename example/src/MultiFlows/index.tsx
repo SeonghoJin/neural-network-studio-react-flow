@@ -8,7 +8,7 @@ import ReactFlow, {
   Edge,
   Connection,
   ReactFlowProvider,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 import './multiflows.css';
 

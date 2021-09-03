@@ -15,7 +15,7 @@ import ReactFlow, {
   SnapGrid,
   Connection,
   Edge,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 import ColorSelectorNode from './ColorSelectorNode';
 

@@ -13,7 +13,7 @@ import ReactFlow, {
   ConnectionMode,
   updateEdge,
   ArrowHeadType,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 import CustomNode from './CustomNode';
 
 const initialElements: Elements = [

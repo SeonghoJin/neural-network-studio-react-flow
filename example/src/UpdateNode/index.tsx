@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ReactFlow, { Elements } from 'react-flow-renderer';
+import ReactFlow, { Elements } from 'react-flow-nns';
 
 import './updatenode.css';
 

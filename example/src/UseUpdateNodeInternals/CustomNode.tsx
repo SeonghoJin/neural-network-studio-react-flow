@@ -1,6 +1,6 @@
 import React, { memo, FC, useMemo, CSSProperties } from 'react';
 
-import { Handle, Position, NodeProps } from 'react-flow-renderer';
+import { Handle, Position, NodeProps } from 'react-flow-nns';
 
 const nodeStyles: CSSProperties = { padding: 10, border: '1px solid #ddd' };
 

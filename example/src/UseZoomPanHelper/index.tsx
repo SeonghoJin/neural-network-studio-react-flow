@@ -11,7 +11,7 @@ import ReactFlow, {
   ElementId,
   Connection,
   Edge,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 const initialElements: Elements = [
   { id: '1', type: 'input', data: { label: 'Node 1' }, position: { x: 250, y: 5 }, className: 'light' },

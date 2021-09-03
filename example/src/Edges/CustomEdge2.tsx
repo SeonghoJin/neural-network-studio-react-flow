@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { EdgeProps, getBezierPath, getMarkerEnd, EdgeText, getEdgeCenter } from 'react-flow-renderer';
+import { EdgeProps, getBezierPath, getMarkerEnd, EdgeText, getEdgeCenter } from 'react-flow-nns';
 
 const CustomEdge: FC<EdgeProps> = ({
   id,

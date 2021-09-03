@@ -14,7 +14,7 @@ import ReactFlow, {
   BackgroundVariant,
   Connection,
   Edge,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 const onLoad = (reactFlowInstance: OnLoadParams) => console.log('flow loaded:', reactFlowInstance);
 const onElementClick = (_: MouseEvent, element: FlowElement) => console.log('click', element);

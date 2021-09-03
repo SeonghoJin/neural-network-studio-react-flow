@@ -1,4 +1,4 @@
-import { ElementId, Elements, Position } from 'react-flow-renderer';
+import { ElementId, Elements, Position } from 'react-flow-nns';
 
 const nodeWidth = 80;
 const nodeGapWidth = nodeWidth * 2;

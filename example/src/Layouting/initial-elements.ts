@@ -1,4 +1,4 @@
-import { Elements, XYPosition } from 'react-flow-renderer';
+import { Elements, XYPosition } from 'react-flow-nns';
 
 const position: XYPosition = { x: 0, y: 0 };
 

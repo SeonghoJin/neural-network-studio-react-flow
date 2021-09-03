@@ -1,6 +1,6 @@
 import React, { useState, MouseEvent } from 'react';
 
-import ReactFlow, { removeElements, addEdge, Node, FlowElement, Elements, Connection, Edge } from 'react-flow-renderer';
+import ReactFlow, { removeElements, addEdge, Node, FlowElement, Elements, Connection, Edge } from 'react-flow-nns';
 
 const onNodeDragStop = (_: MouseEvent, node: Node) => console.log('drag stop', node);
 const onElementClick = (_: MouseEvent, element: FlowElement) => console.log('click', element);

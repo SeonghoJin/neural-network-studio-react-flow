@@ -7,7 +7,7 @@ import ReactFlow, {
   Connection,
   Edge,
   OnLoadParams,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 import Controls from './Controls';
 

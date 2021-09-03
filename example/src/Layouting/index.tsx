@@ -10,7 +10,7 @@ import ReactFlow, {
   Edge,
   NodeExtent,
   Position,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 import dagre from 'dagre';
 
 import initialElements from './initial-elements';

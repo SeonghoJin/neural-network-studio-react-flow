@@ -12,7 +12,7 @@ import ReactFlow, {
   useUpdateNodeInternals,
   Position,
   isEdge,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 import CustomNode from './CustomNode';
 
 const initialHandleCount = 1;

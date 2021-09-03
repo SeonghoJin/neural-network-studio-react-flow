@@ -10,7 +10,7 @@ import ReactFlow, {
   OnConnectStartParams,
   NodeProps,
   NodeTypesType,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 import './validation.css';
 

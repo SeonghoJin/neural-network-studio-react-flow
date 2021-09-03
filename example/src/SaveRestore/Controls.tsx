@@ -1,5 +1,5 @@
 import React, { memo, useCallback, Dispatch, FC } from 'react';
-import { useZoomPanHelper, OnLoadParams, Elements, FlowExportObject } from 'react-flow-renderer';
+import { useZoomPanHelper, OnLoadParams, Elements, FlowExportObject } from 'react-flow-nns';
 import localforage from 'localforage';
 
 localforage.config({

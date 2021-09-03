@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ConnectionLineComponentProps } from 'react-flow-renderer';
+import { ConnectionLineComponentProps } from 'react-flow-nns';
 
 const ConnectionLine: FC<ConnectionLineComponentProps> = ({ sourceX, sourceY, targetX, targetY }) => {
   return (

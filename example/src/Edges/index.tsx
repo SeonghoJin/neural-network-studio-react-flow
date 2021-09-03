@@ -14,7 +14,7 @@ import ReactFlow, {
   Edge,
   ArrowHeadType,
   Node,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 import CustomEdge from './CustomEdge';
 import CustomEdge2 from './CustomEdge2';

@@ -1,4 +1,4 @@
-import { Elements } from 'react-flow-renderer';
+import { Elements } from 'react-flow-nns';
 
 export function getElements(xElements: number = 10, yElements: number = 10): Elements {
   const initialElements = [];

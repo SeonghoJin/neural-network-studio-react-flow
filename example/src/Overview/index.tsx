@@ -16,7 +16,7 @@ import ReactFlow, {
   ArrowHeadType,
   Connection,
   Edge,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 const onNodeDragStart = (_: MouseEvent, node: Node) => console.log('drag start', node);
 const onNodeDrag = (_: MouseEvent, node: Node) => console.log('drag', node);

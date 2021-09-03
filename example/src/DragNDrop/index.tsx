@@ -10,7 +10,7 @@ import ReactFlow, {
   Edge,
   ElementId,
   Node,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 import Sidebar from './Sidebar';
 

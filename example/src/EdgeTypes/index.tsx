@@ -13,7 +13,7 @@ import ReactFlow, {
   Connection,
   Edge,
   Elements,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 import { getElements } from './utils';
 
 const onLoad = (reactFlowInstance: OnLoadParams) => {

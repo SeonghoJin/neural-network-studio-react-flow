@@ -8,7 +8,7 @@ import ReactFlow, {
   Connection,
   Edge,
   removeElements,
-} from 'react-flow-renderer';
+} from 'react-flow-nns';
 
 const initialElements: Elements = [
   {
