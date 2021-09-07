@@ -15,7 +15,7 @@ import {
   HandleType,
 } from '../../types';
 
-type ValidConnectionFunc = (connection: Connection) => boolean;
+export type ValidConnectionFunc = (connection: Connection) => boolean;
 export type SetSourceIdFunc = (params: SetConnectionId) => void;
 
 export type SetPosition = (pos: XYPosition) => void;
@@ -53,6 +53,7 @@ function getCheckElementBelowIsValidResult(
         ? (isTarget && elementBelowIsSource) || (!isTarget && elementBelowIsTarget)
         : true;
 
+    console.log(isValid);
     if (isValid) {
       const elementBelowNodeId = elementBelow.getAttribute('data-nodeid');
       const elementBelowHandleId = elementBelow.getAttribute('data-handleid');

@@ -21,6 +21,7 @@ import {
 } from '../types';
 
 import * as constants from './contants';
+import { ValidConnectionFunc } from '../components/Handle/handler';
 
 export const setOnConnect = (onConnect: OnConnectFunc) =>
   createAction(constants.SET_ON_CONNECT, {
@@ -126,6 +127,8 @@ export const setConnectionMode = (connectionMode: ConnectionMode) =>
 
 export const setNodeExtent = (nodeExtent: NodeExtent) => createAction(constants.SET_NODE_EXTENT, nodeExtent);
 
+export const setIsValidConnection = (isValidConnection : ValidConnectionFunc) => createAction(constants.SET_IS_VALID_CONNECTION, {isValidConnection});
+
 export type ReactFlowAction = ReturnType<
   | typeof setOnConnect
   | typeof setOnConnectStart
@@ -160,4 +163,5 @@ export type ReactFlowAction = ReturnType<
   | typeof setMultiSelectionActive
   | typeof setConnectionMode
   | typeof setNodeExtent
+  | typeof setIsValidConnection
 >;

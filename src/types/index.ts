@@ -1,5 +1,6 @@
 import React, { CSSProperties, MouseEvent as ReactMouseEvent, HTMLAttributes, ReactNode } from 'react';
 import { Selection as D3Selection, ZoomBehavior } from 'd3';
+import { ValidConnectionFunc } from '../components/Handle/handler';
 
 export type ElementId = string;
 
@@ -437,6 +438,8 @@ export interface ReactFlowState {
   onConnectStart?: OnConnectStartFunc;
   onConnectStop?: OnConnectStopFunc;
   onConnectEnd?: OnConnectEndFunc;
+
+  isValidConnection: ValidConnectionFunc;
 }
 
 export type UpdateNodeInternals = (nodeId: ElementId) => void;

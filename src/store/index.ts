@@ -54,6 +54,8 @@ export const initialState: ReactFlowState = {
   multiSelectionActive: false,
 
   reactFlowVersion: typeof __REACT_FLOW_VERSION__ !== 'undefined' ? __REACT_FLOW_VERSION__ : '-',
+
+  isValidConnection: () => true,
 };
 
 const store = configureStore(initialState);

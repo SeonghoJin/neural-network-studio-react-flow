@@ -95,6 +95,7 @@ const GraphView = ({
   edgeUpdaterRadius,
   onEdgeUpdateStart,
   onEdgeUpdateEnd,
+  isValidConnection,
 }: GraphViewProps) => {
   const isInitialized = useRef<boolean>(false);
   const setOnConnect = useStoreActions((actions) => actions.setOnConnect);
@@ -111,6 +112,7 @@ const GraphView = ({
   const setTranslateExtent = useStoreActions((actions) => actions.setTranslateExtent);
   const setNodeExtent = useStoreActions((actions) => actions.setNodeExtent);
   const setConnectionMode = useStoreActions((actions) => actions.setConnectionMode);
+  const setIsValidConnection = useStoreActions((actions) => actions.setIsValidConnection)
   const currentStore = useStore();
   const { zoomIn, zoomOut, zoomTo, transform, fitView, initialized } = useZoomPanHelper();
 
@@ -216,6 +218,12 @@ const GraphView = ({
       setConnectionMode(connectionMode);
     }
   }, [connectionMode]);
+
+  useEffect(() => {
+    if(typeof isValidConnection !== 'undefined') {
+      setIsValidConnection(isValidConnection)
+    }
+  })
 
   return (
     <FlowRenderer

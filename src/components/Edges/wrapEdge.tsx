@@ -52,6 +52,7 @@ export default (EdgeComponent: ComponentType<EdgeProps>) => {
     const unsetNodesSelection = useStoreActions((actions) => actions.unsetNodesSelection);
     const setPosition = useStoreActions((actions) => actions.setConnectionPosition);
     const connectionMode = useStoreState((state) => state.connectionMode);
+    const isValidConnection = useStoreState((state) => state.isValidConnection);
 
     const [updating, setUpdating] = useState<boolean>(false);
 
@@ -137,7 +138,6 @@ export default (EdgeComponent: ComponentType<EdgeProps>) => {
       (event: React.MouseEvent<SVGGElement, MouseEvent>, isSourceHandle: boolean) => {
         const nodeId = isSourceHandle ? target : source;
         const handleId = isSourceHandle ? targetHandleId : sourceHandleId;
-        const isValidConnection = () => true;
         const isTarget = isSourceHandle;
 
         onEdgeUpdateStart?.(event, edgeElement);

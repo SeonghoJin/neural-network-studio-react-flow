@@ -42,6 +42,7 @@ import {
 
 import '../../style.css';
 import '../../theme-default.css';
+import { ValidConnectionFunc } from '../../components/Handle/handler';
 
 const defaultNodeTypes = {
   input: InputNode,
@@ -128,6 +129,7 @@ export interface ReactFlowProps extends Omit<HTMLAttributes<HTMLDivElement>, 'on
   edgeUpdaterRadius?: number;
   nodeTypesId?: string;
   edgeTypesId?: string;
+  isValidConnection?: ValidConnectionFunc
 }
 
 export type ReactFlowRefType = HTMLDivElement;
@@ -208,6 +210,7 @@ const ReactFlow = forwardRef<ReactFlowRefType, ReactFlowProps>(
       edgeUpdaterRadius = 10,
       nodeTypesId = '1',
       edgeTypesId = '1',
+      isValidConnection,
       ...rest
     },
     ref
@@ -287,6 +290,7 @@ const ReactFlow = forwardRef<ReactFlowRefType, ReactFlowProps>(
             onEdgeUpdateStart={onEdgeUpdateStart}
             onEdgeUpdateEnd={onEdgeUpdateEnd}
             edgeUpdaterRadius={edgeUpdaterRadius}
+            isValidConnection={isValidConnection}
           />
           <ElementUpdater elements={elements} />
           {onSelectionChange && <SelectionListener onSelectionChange={onSelectionChange} />}

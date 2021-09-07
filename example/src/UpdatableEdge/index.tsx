@@ -70,6 +70,10 @@ const UpdatableEdge = () => {
       onEdgeUpdateStart={onEdgeUpdateStart}
       onElementsRemove={onElementsRemove}
       onEdgeUpdateEnd={onEdgeUpdateEnd}
+      isValidConnection={() => {
+        console.log(1);
+        return true;
+      }}
     >
       <Controls />
     </ReactFlow>
