@@ -223,7 +223,7 @@ const GraphView = ({
     if(typeof isValidConnection !== 'undefined') {
       setIsValidConnection(isValidConnection)
     }
-  })
+  }, [isValidConnection])
 
   return (
     <FlowRenderer
