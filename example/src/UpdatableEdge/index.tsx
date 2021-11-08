@@ -71,7 +71,6 @@ const UpdatableEdge = () => {
       onElementsRemove={onElementsRemove}
       onEdgeUpdateEnd={onEdgeUpdateEnd}
       isValidConnection={() => {
-        console.log(1);
         return true;
       }}
     >

@@ -53,7 +53,6 @@ function getCheckElementBelowIsValidResult(
         ? (isTarget && elementBelowIsSource) || (!isTarget && elementBelowIsTarget)
         : true;
 
-    console.log(isValid);
     if (isValid) {
       const elementBelowNodeId = elementBelow.getAttribute('data-nodeid');
       const elementBelowHandleId = elementBelow.getAttribute('data-handleid');
